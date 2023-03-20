@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class RegistrationTest extends BasicSettings {
 
-    private final String NAME = "Ganzalis235";
+    private final String NAME = "Ganzalis2352";
     private final String EMAIL = NAME + "@yandex.ru";
     private final String PASSWORD = "123456";
     private final String NOTCORRECTPASSWORD = "123";
