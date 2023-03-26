@@ -1,6 +1,9 @@
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import org.junit.jupiter.api.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import io.qameta.allure.junit4.DisplayName;
 import pageobject.AccountPage;
 import pageobject.LoginPage;
 import pageobject.MainPage;
@@ -17,7 +20,7 @@ public class AccountPageTest extends BasicSettings {
     private LoginPage loginPage;
     private AccountPage accountPage;
 
-    @BeforeEach
+    @Before
     public void openPage () {
 
         mainPage = open("https://stellarburgers.nomoreparties.site/", MainPage.class);
@@ -30,7 +33,7 @@ public class AccountPageTest extends BasicSettings {
 
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
 
         getWebDriver().quit();

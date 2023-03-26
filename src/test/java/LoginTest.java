@@ -1,8 +1,8 @@
 import com.codeborne.selenide.WebDriverRunner;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.After;
+import org.junit.Before;
+import io.qameta.allure.junit4.DisplayName;
+import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.MainPage;
 import pageobject.RegistrationPage;
@@ -19,7 +19,7 @@ public class LoginTest extends BasicSettings {
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
 
-    @BeforeEach
+    @Before
     public void openPage () {
 
         mainPage = open("https://stellarburgers.nomoreparties.site/", MainPage.class);
@@ -29,7 +29,7 @@ public class LoginTest extends BasicSettings {
 
     }
 
-    @AfterEach
+    @After
     public void tearDown() {
 
         getWebDriver().quit();
@@ -38,7 +38,7 @@ public class LoginTest extends BasicSettings {
 
     @Test
     @DisplayName("Авторизация через кнопку Входа")
-    public void AuthorizationThroughButtonLogin () {
+    public void authorizationThroughButtonLogin () {
 
         mainPage.clickButtonLogin();
         loginPage.authorization(EMAIL, PASSWORD);
@@ -48,7 +48,7 @@ public class LoginTest extends BasicSettings {
 
     @Test
     @DisplayName("Авторизация через кнопку Личный кабинет")
-    public void AuthorizationThroughButtonPersonalAccount () {
+    public void authorizationThroughButtonPersonalAccount () {
 
         mainPage.clickButtonPersonalArea();
         loginPage.authorization(EMAIL, PASSWORD);
@@ -58,7 +58,7 @@ public class LoginTest extends BasicSettings {
 
     @Test
     @DisplayName("Авторизация через кнопку на форме авторизации")
-    public void AuthorizationThroughButtonOnAuthorizationForm() {
+    public void authorizationThroughButtonOnAuthorizationForm() {
 
         mainPage.clickButtonPersonalArea();
         loginPage.clickRegistrationLink();
@@ -70,7 +70,7 @@ public class LoginTest extends BasicSettings {
 
     @Test
     @DisplayName("Авторизация через кнопку Восстановление пароля")
-    public void AuthorizationThroughButtonPasswordRecovery() {
+    public void authorizationThroughButtonPasswordRecovery() {
 
         mainPage.clickButtonPersonalArea();
         loginPage.clickPasswordRecoveryLink();

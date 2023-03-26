@@ -1,9 +1,10 @@
 import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.Before;
+
 
 public class BasicSettings {
 
-    @BeforeEach
+    @Before
     public void init() {
 
         //Раскоменнтировать нужную строку в зависимоти от того, какой браузер необходим.

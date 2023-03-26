@@ -1,7 +1,7 @@
 import com.codeborne.selenide.WebDriverRunner;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.junit4.DisplayName;
+import org.junit.Before;
+import org.junit.Test;
 import pageobject.LoginPage;
 import pageobject.MainPage;
 import pageobject.RegistrationPage;
@@ -19,7 +19,7 @@ public class RegistrationTest extends BasicSettings {
     private LoginPage loginPage;
     private RegistrationPage registrationPage;
 
-    @BeforeEach
+    @Before
     public void openPage () {
 
         mainPage = open("https://stellarburgers.nomoreparties.site/", MainPage.class);
@@ -31,7 +31,7 @@ public class RegistrationTest extends BasicSettings {
 
     @Test
     @DisplayName("Позитивная проверка регистрации пользователя")
-    public void RegistrationUser () {
+    public void registrationUser () {
 
         mainPage.clickButtonPersonalArea();
         loginPage.clickRegistrationLink();
@@ -42,7 +42,7 @@ public class RegistrationTest extends BasicSettings {
 
     @Test
     @DisplayName("Негативная проверка регистрации пользователя с не корреткным паролем")
-    public void RegistrationUserWithIncorrectPassword () {
+    public void registrationUserWithIncorrectPassword () {
 
         mainPage.clickButtonPersonalArea();
         loginPage.clickRegistrationLink();
